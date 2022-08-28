@@ -2,7 +2,7 @@
 
 ## Overview
 
-A responsive Udemy home page created using HTML5, CSS3, JavaScript, and react.js.
+A responsive Udemy home page created using HTML5, CSS modules, JavaScript, and react.js.
 
 ## About the project
 
