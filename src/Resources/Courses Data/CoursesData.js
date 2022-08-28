@@ -1,3 +1,7 @@
+
+/* hardcoded courses navbar */
+export const coursesNavbar = ["Python", "Excel", "Web Development", "JavaScript", "Data Science", "AWS Certification", "Drawing"];
+
 /* hardcoded courses data */
 export const coursesData =
     [
@@ -56,4 +60,4 @@ export const coursesData =
             "image": "https://drive.google.com/uc?export=view&id=1Kmgnax9QYH_scuRwR4yvwllahq4VJv3s",
             "bestSeller": false
         }
-    ]
+    ];
