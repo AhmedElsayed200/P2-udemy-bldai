@@ -1,20 +1,21 @@
 import React from "react";
+import Style from "../../Resources/Styling/Courses.module.css";
 
 const CoursesHeader = (props) => {
   const coursesNavbarContent = props.coursesNavbar.map((course) => (
     <li key={course}>
-      <button>{course}</button>
+      <button className={Style.navbarBtn}>{course}</button>
     </li>
   ));
 
   return (
     <>
-      <div>A broad selection of courses</div>
-      <div>
+      <div className={Style.header}>A broad selection of courses</div>
+      <div className={Style.subHeader}>
         Choose from 185,000 online video courses with new additions published
         every month
       </div>
-      <ul>{coursesNavbarContent}</ul>
+      <ul className={Style.navbar}>{coursesNavbarContent}</ul>
     </>
   );
 };

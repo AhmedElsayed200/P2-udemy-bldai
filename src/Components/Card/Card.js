@@ -1,21 +1,31 @@
 import React from "react";
+import Rating from "@mui/material/Rating";
+import Style from "../../Resources/Styling/Courses.module.css";
 
 const Card = (props) => {
   const courseCard = (
-    <div>
-      <div>
+    <div className={Style.card}>
+      <div className={Style.img}>
         <img src={props.courseInfo.image} alt={props.courseInfo.title} />
-        <div className="filter"></div>
+        <div className={Style.filter}></div>
       </div>
-      <div>{props.courseInfo.title}</div>
-      <div>{props.courseInfo.author}</div>
-      <div>
-        <span>{props.courseInfo.rate}</span>
-        {/* stars */}
-        <span>{props.courseInfo.noOfRaters}</span>
+      <div className={Style.title}>{props.courseInfo.title}</div>
+      <div className={Style.author}>{props.courseInfo.author}</div>
+      <div className={Style.rating}>
+        <span className={Style.rate}>{props.courseInfo.rate}</span>
+        <Rating
+          name="read-only"
+          value={props.courseInfo.rate}
+          precision={0.5}
+          readOnly
+        />
+        <span className={Style.raters}>{props.courseInfo.noOfRaters}</span>
       </div>
-      <div>{props.courseInfo.newPrice}</div>
-      <div>{props.courseInfo.oldPrice}</div>
+      <div className={Style.newPrice}>{props.courseInfo.newPrice}</div>
+      <div className={Style.oldPrice}>{props.courseInfo.oldPrice}</div>
+      {props.courseInfo.bestSeller && (
+        <div className={Style.bestSeller}>Best Seller</div>
+      )}
     </div>
   );
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Cards from "../Cards/Cards";
 import CoursesHeader from "../Courses Header/CoursesHeader";
+import Style from "../../Resources/Styling/Courses.module.css";
 /* array of objects represents courses info */
 import { coursesData } from "../../Resources/Courses Data/CoursesData";
 /* array of strings represents courses navbar */
@@ -9,8 +10,10 @@ import { coursesNavbar } from "../../Resources/Courses Data/CoursesData";
 const CoursesSection = () => {
   const cousrseHeadline = (
     <>
-      <div>Expand your career opportunities with Python</div>
-      <div>
+      <div className={Style.headline}>
+        Expand your career opportunities with Python
+      </div>
+      <div className={Style.subHeadline}>
         Take one of Udemy’s range of Python courses and learn how to code using
         this incredibly useful language. Its simple syntax and readability makes
         Python perfect for Flask, Django, data science, and machine learning.
@@ -18,15 +21,17 @@ const CoursesSection = () => {
         from a range of courses that will appeal to both beginners and advanced
         developers alike.
       </div>
-      <button>Explore Python</button>
+      <button className={Style.exploreBtn}>Explore Python</button>
     </>
   );
 
   return (
-    <section>
+    <section className={Style.container}>
       <CoursesHeader coursesNavbar={coursesNavbar} />
-      {cousrseHeadline}
-      <Cards coursesData={coursesData} />
+      <div className={Style.viewer}>
+        {cousrseHeadline}
+        <Cards coursesData={coursesData} />
+      </div>
     </section>
   );
 };
