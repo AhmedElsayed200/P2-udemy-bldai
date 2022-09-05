@@ -1,8 +1,7 @@
-import React from "react";
 import Style from "../../Resources/Styling/Courses.module.css";
 
-const CoursesHeader = (props) => {
-  const coursesNavbarContent = props.coursesNavbar.map((course) => (
+const CoursesHeader = ({ coursesNavbar }) => {
+  const coursesNavbarContent = coursesNavbar.map((course) => (
     <li key={course}>
       <button className={Style.navbarBtn}>{course}</button>
     </li>
