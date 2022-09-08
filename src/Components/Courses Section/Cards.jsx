@@ -1,4 +1,4 @@
-import Card from "../Card/Card";
+import Card from "./Card";
 import Style from "../../Resources/Styling/Courses.module.css";
 
 const Cards = ({ coursesData }) => {

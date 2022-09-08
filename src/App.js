@@ -1,10 +1,13 @@
 import './App.css';
-import MainPage from './Components/Main Page/MainPage';
+import "./Resources/Styling/index.css"
+import Navbar from './Components/Navbar';
+import HomePage from './Pages/Home Page';
 
 const App = () => {
   return (
     <div className="App">
-      <MainPage />
+      <Navbar />
+      <HomePage />
     </div>
   );
 }

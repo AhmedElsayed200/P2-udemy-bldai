@@ -1,0 +1,494 @@
+/* reset styling - apply others for all*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+/*********************** app ***********************/
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*********************** navbar ***********************/
+/* navbar container */
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 20px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  z-index: 1;
+}
+
+/* udemy logo */
+.udemy-logo {
+  width: 90px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.udemy-logo > img {
+  width: 100%;
+}
+
+/* menu 3 bars */
+.menu-3lines {
+  display: none;
+}
+
+/* categories, business, teach */
+.categories-navbar,
+.business-navbar,
+.teach-navbar {
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.categories-navbar:hover,
+.business-navbar:hover,
+.teach-navbar:hover {
+  color: #5624d0;
+}
+
+/* search bar */
+.search-navbar-container {
+  flex-shrink: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.search-navbar {
+  font-size: 1.2rem;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  padding: 15px 20px 15px 50px;
+  width: 100%;
+  background-color: #fafafa;
+  outline: none;
+}
+
+.search-navbar:focus-visible {
+  outline: none;
+}
+
+.search-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 8px); /* (parent's height) - (search img width / 2) */
+  left: 18px;
+}
+
+.search-btn > img {
+  width: 16px;
+  height: 16px;
+}
+
+/* shopping cart */
+.cart-navbar {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.cart-navbar > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* log in, sign up, language */
+.right-sec-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-navbar,
+.signup-navbar {
+  border: 1px solid hsl(0, 0%, 0%);
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  margin-right: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.login-navbar {
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.signup-navbar {
+  font-weight: 600;
+  background-color: #1c1d1f;
+  color: #ffffff;
+}
+
+.language-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid hsl(0, 0%, 0%);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.language-navbar > img {
+  width: 19px;
+  height: 19px;
+}
+
+.login-navbar:hover,
+.language-navbar:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.signup-navbar:hover {
+  background-color: #000000;
+}
+
+/*********************** header ***********************/
+/* header container */
+.header {
+  background-color: #fafafa;
+  width: 85%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* header text */
+.header-txt {
+  width: 35%;
+  background-color: #ffffff;
+  line-height: 3rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  padding: 2.4rem;
+}
+
+.catch-txt {
+  font-family: serif, Arial, Helvetica, sans-serif;
+  font-size: 2.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.content-txt {
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 300;
+}
+
+/* header image */
+.header-img-container {
+  width: 20%;
+  margin: 30px 0px;
+}
+
+.header-img > img {
+  width: 100%;
+}
+
+/*********************** course section ***********************/
+/* course container */
+.courses-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: 85%;
+  margin: auto;
+  padding: 40px 0px 40px 20px;
+}
+
+/* course headline */
+.courses-headline {
+  font-family: "Lora", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+/* course sub-headline */
+.courses-subheadline {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+/* courses navigator */
+.courses-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 15px 0px;
+}
+
+.courses-nav button {
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #6a6f73;
+  padding-left: 5px;
+}
+
+.courses-nav button:hover {
+  color: #000000;
+}
+
+/* courses view */
+.courses-viewer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  padding: 30px 20px;
+  border: 1px solid #d1d7dc;
+}
+
+.courses-viewer-headline {
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.courses-viewer-subheadline {
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  font-weight: 300;
+  max-width: 800px;
+  max-height: 70px;
+  overflow: hidden;
+}
+
+/* explore course button */
+.explore-course {
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  padding: 10px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.explore-course:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* courses cards */
+.courses-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px 10px;
+  justify-content: flex-start;
+}
+
+.course-card {
+  cursor: pointer;
+  width: 233px;
+}
+
+/* course card images */
+.course-img {
+  border: 1px solid #d1d7dc;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #000000;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.course-img:hover .filter {
+  display: block;
+}
+
+/* course card content */
+.course-img ~ div {
+  margin-top: 10px;
+  font-family: sans-serif, Arial, Helvetica, serif;
+}
+
+.course-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.course-authors {
+  font-size: 1.1rem;
+  color: #6a6f73;
+}
+
+.course-rating {
+  font-size: 1.1rem;
+  color: #b4690e;
+  font-weight: 700;
+}
+
+.fa-star {
+  color: #000000;
+}
+
+.checked {
+  color: rgb(255, 166, 0);
+}
+
+.raters {
+  color: #6a6f73;
+  font-weight: 300;
+}
+
+.new-price {
+  display: inline-block;
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-right: 6px;
+}
+
+.old-price {
+  display: inline-block;
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #6a6f73;
+  text-decoration: line-through;
+}
+
+.best-seller {
+  width: 70px;
+  background-color: #eceb98;
+  color: #3d3c0a;
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-weight: 700;
+  padding: 6px 0px;
+  text-align: center;
+}
+
+/*********************** top categories ***********************/
+/* headline */
+.top-categories {
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* categories titles */
+.title-category {
+  font-family: sans-serif, Arial, Helvetica, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/*********************** different screens ***********************/
+@media screen and (max-width: 1300px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .business-navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .catch-txt {
+    font-size: 2.2rem;
+  }
+  .content-txt {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .teach-navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .right-sec-navbar,
+  .cart-navbar,
+  .categories-navbar,
+  .search-navbar-container {
+    display: none;
+  }
+
+  #navbar {
+    justify-content: space-between;
+  }
+
+  .menu-3lines {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  .catch-txt {
+    font-size: 2rem;
+  }
+  .content-txt {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    flex-direction: column-reverse;
+    background-color: #ffffff;
+    height: auto;
+    justify-content: flex-end;
+  }
+  .header-img-container {
+    width: 100%;
+    height: 50%;
+    background-color: #fafafa;
+    margin: 0;
+  }
+  .header-img {
+    width: 20%;
+    margin: 10px auto;
+  }
+  .header-img img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .header-txt {
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+    text-align: center;
+  }
+}

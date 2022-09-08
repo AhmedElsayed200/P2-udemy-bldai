@@ -1,5 +1,5 @@
-import Cards from "../Cards/Cards";
-import CoursesHeader from "../Courses Header/CoursesHeader";
+import Cards from "./Cards";
+import CoursesHeader from "./CoursesHeader";
 import Style from "../../Resources/Styling/Courses.module.css";
 /* array of objects represents courses info */
 import { coursesData } from "../../Resources/Courses Data/CoursesData";
