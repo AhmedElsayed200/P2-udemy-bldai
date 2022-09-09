@@ -64,6 +64,14 @@
   border: 1px solid var(--lightGray);
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 .headline {
   font-family: sans-serif, Arial, Helvetica, serif;
   font-size: 1.8rem;
