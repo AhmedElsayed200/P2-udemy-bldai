@@ -1,6 +1,6 @@
 const TopCategories = () => {
   return (
-    <section className="container mx-auto mb-5">
+    <section className="container w-5/6">
       <p className="top-categories">Top categories</p>
       <div className="row">
         <div className="col-12 col-sm-4 col-lg-3">

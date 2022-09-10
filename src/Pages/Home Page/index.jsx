@@ -2,11 +2,11 @@ import HomeHeader from "../../Components/Home Header";
 import CoursesSection from "../../Components/Courses Section";
 import TopCategories from "../../Components/Top Categories";
 
-const HomePage = ({ coursesData }) => {
+const HomePage = ({ coursesSummary }) => {
   return (
     <>
       <HomeHeader />
-      <CoursesSection coursesData={coursesData} />
+      <CoursesSection coursesSummary={coursesSummary} />
       <TopCategories />
     </>
   );

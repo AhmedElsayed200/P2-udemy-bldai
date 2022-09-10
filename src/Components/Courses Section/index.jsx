@@ -5,7 +5,7 @@ import Style from "../../Resources/Styling/Courses.module.css";
 import { coursesNavbar } from "../../Resources/Courses Data/CoursesData";
 import { useState } from "react";
 
-const CoursesSection = ({ coursesData }) => {
+const CoursesSection = ({ coursesSummary }) => {
   const [selectedCourse, setSelectedCourse] = useState("Python");
 
   const selectCourse = (course) => {
@@ -16,9 +16,10 @@ const CoursesSection = ({ coursesData }) => {
     <section className={Style.container}>
       <CoursesHeader
         coursesNavbar={coursesNavbar}
+        selectedCourse={selectedCourse}
         selectCourse={selectCourse}
       />
-      {coursesData.map((course) => {
+      {coursesSummary.map((course) => {
         return (
           <div
             key={course.id}

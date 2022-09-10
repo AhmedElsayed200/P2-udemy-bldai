@@ -1,6 +1,6 @@
 import Style from "../../Resources/Styling/Courses.module.css";
 
-const CoursesHeader = ({ coursesNavbar, selectCourse }) => {
+const CoursesHeader = ({ coursesNavbar, selectedCourse, selectCourse }) => {
   const handleCourseSelect = (course) => {
     selectCourse(course);
     console.log(course);
@@ -18,7 +18,9 @@ const CoursesHeader = ({ coursesNavbar, selectCourse }) => {
           <li key={course}>
             <button
               onClick={() => handleCourseSelect(course)}
-              className={Style.navbarBtn}
+              className={`${Style.navbarBtn}${
+                selectedCourse === course ? " text-black " : null
+              }`}
             >
               {course}
             </button>
