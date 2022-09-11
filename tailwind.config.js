@@ -11,7 +11,10 @@ module.exports = {
       bronzeOlive: "#3d3c0a",
       midYellow: "#eceb98",
       lightOrange: "rgb(255, 166, 0)",
+      fantOrange: "#f3ca8c",
       darkOrange: "#b4690e",
+      yellow: "#faaf00",
+      lightViolet: "#cec0fc"
     },
     fontFamily: {
       lora: ["Lora", "serif"],

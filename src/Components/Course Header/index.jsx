@@ -1,6 +1,5 @@
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
 import exclamition from "../../Resources/SVGs/exclamation-mark.svg";
 import language from "../../Resources/SVGs/language.svg";
 import caption from "../../Resources/SVGs/captioning.svg";
@@ -12,7 +11,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
     <div id="courseHeaderContainer" className="conatiner bg-lightBlack">
       <div id="courseHeaderImg" className="w-4/6 mx-auto">
         <img
-          className="pt-5"
+          className="pt-5 mx-auto"
           src={selectedCourseSummary?.image_750x422}
           alt={selectedCourseSummary?.title}
         />
@@ -29,9 +28,9 @@ const CourseHeader = ({ selectedCourseSummary }) => {
         </div>
         <div
           id="courseRatingContainer"
-          className="flex text-4xl font-light mb-3"
+          className="flex gap-x-2 text-xl font-normal mb-2"
         >
-          <span id="courseRating">
+          <span id="courseRating" className="font-bold text-yellow text-lg">
             {Math.round(selectedCourseSummary?.rating * 10) / 10}
           </span>
           <span id="courseRatingIcon">
@@ -40,24 +39,29 @@ const CourseHeader = ({ selectedCourseSummary }) => {
               value={Math.round(selectedCourseSummary?.rating * 10) / 10}
               precision={0.5}
               emptyIcon={
-                <StarBorderIcon style={{ opacity: 1 }} fontSize="inherit" />
+                <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
               }
               readOnly
             />
           </span>
-          <span id="courseRatersNum">{`(${selectedCourseSummary?.num_reviews} ratings)`}</span>
+          <span
+            id="courseRatersNum"
+            className="text-lightViolet underline"
+          >{`(${selectedCourseSummary?.num_reviews} ratings)`}</span>
           <span id="courseSubscribersNum">
             {selectedCourseSummary?.num_subscribers} students
           </span>
         </div>
-        <div id="courseInstructorsHeader">
+        <div id="courseInstructorsHeader" className="mb-2">
           {`Created by `}
           {selectedCourseSummary?.visible_instructors?.map(
             (instructor, indx) => {
               return (
                 <span key={instructor.id}>
                   <a href={`#${instructor.id}`}>
-                    {instructor.title}
+                    <span className="text-lightViolet underline">
+                      {instructor.title}
+                    </span>
                     {indx <
                     selectedCourseSummary?.visible_instructors.length - 1
                       ? ", "
@@ -68,18 +72,18 @@ const CourseHeader = ({ selectedCourseSummary }) => {
             }
           )}
         </div>
-        <div id="lastUpdated">
+        <div id="lastUpdated" className="flex gap-x-3 items-center mb-2">
           <img className="w-4 h-4" src={exclamition} alt="exclamation" />
           {`Last updated `}
           {`${Number(
             selectedCourseSummary?.last_update_date?.split("-")[1]
           )}/${Number(selectedCourseSummary?.last_update_date?.split("-")[0])}`}
         </div>
-        <div id="courseLanguage">
+        <div id="courseLanguage" className="flex gap-x-3 items-center mb-2">
           <img className="w-4 h-4" src={language} alt="language" />
           {selectedCourseSummary?.locale?.title}
         </div>
-        <div id="courseCaptions">
+        <div id="courseCaptions" className="flex gap-x-3 items-center pb-2">
           <img className="w-4 h-4" src={caption} alt="subtitles" />
           {selectedCourseSummary?.caption_languages?.map((caption, indx) => {
             return (
