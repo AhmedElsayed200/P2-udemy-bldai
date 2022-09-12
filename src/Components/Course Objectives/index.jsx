@@ -2,7 +2,7 @@ const CourseObjectives = ({ selectedCourseSummary }) => {
   return (
     <div
       id="courseObjectives"
-      className="container border-lightGray border-2 w-3/4 p-4 md:ml-20 xs:mx-auto sm:mt-10 md:w-2/4"
+      className="border-lightGray border-2 max-w-3xl w-11/12 sm:w-4/5 p-4 lg:ml-20 xs:mx-auto sm:mt-10 lg:w-2/4"
     >
       <div id="courseObjectivesContent">
         <div className="font-bold text-3xl mb-3">What you'll learn</div>

@@ -6,7 +6,7 @@ const AddToCart = ({ price }) => {
       </div>
       <button
         id="addTocCartBtnHeader"
-        className="container text-center p-3 bg-midViolet hover:bg-darkViolet text-lg font-bold mb-4"
+        className="w-100 text-center p-3 bg-midViolet hover:bg-darkViolet text-lg font-bold mb-4"
       >
         Add to cart
       </button>

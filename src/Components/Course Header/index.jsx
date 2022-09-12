@@ -10,7 +10,10 @@ const CourseHeader = ({ selectedCourseSummary }) => {
 
   return (
     <div id="courseHeaderContainer" className="conatiner bg-lightBlack">
-      <div id="courseHeaderImg" className="w-4/6 mx-auto md:hidden">
+      <div
+        id="courseHeaderImg"
+        className="max-w-3xl w-screen sm:w-4/5 mx-auto lg:hidden"
+      >
         <img
           className="pt-5 mx-auto"
           src={selectedCourseSummary?.image_750x422}
@@ -19,26 +22,27 @@ const CourseHeader = ({ selectedCourseSummary }) => {
       </div>
       <div
         id="courseHeaderContent"
-        className="w-4/6 md:ml-40 xs:mx-auto mt-4 font-ubuntu text-white md:pt-5 md:w-2/4"
+        className="max-w-3xl w-11/12 sm:w-4/5 lg:ml-20 xs:mx-auto mt-4 font-ubuntu text-white md:pt-5"
       >
-        <div id="courseTitle" className="text-4xl font-bold mb-3">
+        <div
+          id="courseTitle"
+          className="xs:text-2xl md:text-4xl font-bold mb-3"
+        >
           {selectedCourseSummary?.title}
         </div>
         <div id="courseHeadline" className="text-xl font-normal mb-3">
           {selectedCourseSummary?.headline}
         </div>
-        <div id="courseBadges" className="inline-block mr-3">
-          {selectedCourseSummary?.badges?.map((badge) => {
-            return (
-              <span
-                key={badge.id}
-                className="inline-block bg-midYellow text-bronzeOlive font-bold px-2 py-1"
-              >
-                {badge.badge_text}
-              </span>
-            );
-          })}
-        </div>
+        {selectedCourseSummary?.badges?.map((badge) => {
+          return (
+            <span
+              key={badge.id}
+              className="inline-block bg-midYellow text-bronzeOlive font-bold px-2 py-1 mr-3"
+            >
+              {badge.badge_text}
+            </span>
+          );
+        })}
         <div
           id="courseRatingContainer"
           className="inline-flex gap-x-2 text-xl font-normal mb-2"
@@ -98,7 +102,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
         </div>
         <div
           id="courseCaptions"
-          className="flex gap-x-3 items-center md:pb-10 sm:pb-4 "
+          className="flex gap-x-3 items-center md:pb-10 sm:pb-4 xs:mb-4"
         >
           <img className="w-4 h-4" src={caption} alt="subtitles" />
           {selectedCourseSummary?.caption_languages?.map((caption, indx) => {
