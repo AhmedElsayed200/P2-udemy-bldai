@@ -1,3 +1,4 @@
+import AddToCart from "./addToCart";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import exclamition from "../../Resources/SVGs/exclamation-mark.svg";
@@ -9,7 +10,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
 
   return (
     <div id="courseHeaderContainer" className="conatiner bg-lightBlack">
-      <div id="courseHeaderImg" className="w-4/6 mx-auto">
+      <div id="courseHeaderImg" className="w-4/6 mx-auto md:hidden">
         <img
           className="pt-5 mx-auto"
           src={selectedCourseSummary?.image_750x422}
@@ -18,7 +19,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
       </div>
       <div
         id="courseHeaderContent"
-        className="w-4/6 mx-auto mt-4 font-ubuntu text-white"
+        className="w-4/6 md:ml-40 xs:mx-auto mt-4 font-ubuntu text-white md:pt-5 md:w-2/4"
       >
         <div id="courseTitle" className="text-4xl font-bold mb-3">
           {selectedCourseSummary?.title}
@@ -26,9 +27,21 @@ const CourseHeader = ({ selectedCourseSummary }) => {
         <div id="courseHeadline" className="text-xl font-normal mb-3">
           {selectedCourseSummary?.headline}
         </div>
+        <div id="courseBadges" className="inline-block mr-3">
+          {selectedCourseSummary?.badges?.map((badge) => {
+            return (
+              <span
+                key={badge.id}
+                className="inline-block bg-midYellow text-bronzeOlive font-bold px-2 py-1"
+              >
+                {badge.badge_text}
+              </span>
+            );
+          })}
+        </div>
         <div
           id="courseRatingContainer"
-          className="flex gap-x-2 text-xl font-normal mb-2"
+          className="inline-flex gap-x-2 text-xl font-normal mb-2"
         >
           <span id="courseRating" className="font-bold text-yellow text-lg">
             {Math.round(selectedCourseSummary?.rating * 10) / 10}
@@ -83,7 +96,10 @@ const CourseHeader = ({ selectedCourseSummary }) => {
           <img className="w-4 h-4" src={language} alt="language" />
           {selectedCourseSummary?.locale?.title}
         </div>
-        <div id="courseCaptions" className="flex gap-x-3 items-center pb-2">
+        <div
+          id="courseCaptions"
+          className="flex gap-x-3 items-center md:pb-10 sm:pb-4 "
+        >
           <img className="w-4 h-4" src={caption} alt="subtitles" />
           {selectedCourseSummary?.caption_languages?.map((caption, indx) => {
             return (
@@ -96,6 +112,9 @@ const CourseHeader = ({ selectedCourseSummary }) => {
             );
           })}
         </div>
+        <AddToCart
+          price={selectedCourseSummary?.price?.discount_price?.price_string}
+        />
       </div>
     </div>
   );

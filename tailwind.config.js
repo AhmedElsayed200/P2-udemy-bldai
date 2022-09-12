@@ -14,13 +14,22 @@ module.exports = {
       fantOrange: "#f3ca8c",
       darkOrange: "#b4690e",
       yellow: "#faaf00",
-      lightViolet: "#cec0fc"
+      lightViolet: "#cec0fc",
+      midViolet: "#a435f0",
+      darkViolet: "#8710d8"
     },
     fontFamily: {
       lora: ["Lora", "serif"],
       ubuntu: ["Ubuntu", "sans-serif"],
       sans: ["sans-serif", "Arial", "Helvetica", "serif"],
       rubik: ["Rubik", "sans-serif"],
+    },
+    screens: {
+      'xs': '340px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
     }
   },
   plugins: [],
