@@ -6,6 +6,7 @@ import CoursePage from "./Pages/Single Course Page";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { data, summary, review } from "./Resources/APIs/APIs";
+import Footer from "./Components/Footer";
 
 const App = () => {
   const [coursesSummary, setCoursesSummary] = useState([]);
@@ -55,6 +56,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 };
