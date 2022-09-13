@@ -1,3 +1,6 @@
+import uparrowIcon from "../../Resources/SVGs/up-arrow.svg";
+import downarrowIcon from "../../Resources/SVGs/down-arrow.svg";
+
 const CourseDescription = ({
   selectedCourseDescription,
   selectedCourseForWho,
@@ -66,17 +69,19 @@ const CourseDescription = ({
       </div>
       <button
         id="showMoreBtn"
-        className="text-darkViolet font-bold text-lg"
+        className="text-darkViolet font-bold text-lg flex items-center gap-x-2"
         onClick={showMore}
       >
         Show more
+        <img src={downarrowIcon} alt="arrow downhead" className="w-3 h-3" />
       </button>
       <button
         id="showLessBtn"
-        className="hidden text-darkViolet font-bold text-lg"
+        className="hidden text-darkViolet font-bold text-lg flex items-center gap-x-2"
         onClick={showLess}
       >
         Show less
+        <img src={uparrowIcon} alt="arrow downhead" className="w-3 h-3" />
       </button>
     </div>
   );

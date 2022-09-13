@@ -2,6 +2,8 @@ import starIcon from "../../Resources/SVGs/star.svg";
 import certificationIcon from "../../Resources/SVGs/certificate.svg";
 import peopleIcon from "../../Resources/SVGs/people.svg";
 import playbtnIcon from "../../Resources/SVGs/play-button.svg";
+import downarrowIcon from "../../Resources/SVGs/down-arrow.svg";
+import uparrowIcon from "../../Resources/SVGs/up-arrow.svg";
 
 const CourseInstructors = ({ selectedCourseInstructors }) => {
   console.log("selectedCourseInstructors: ", selectedCourseInstructors);
@@ -49,7 +51,7 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
           {selectedCourseInstructors?.map((instructor, indx) => {
             return (
               <div key={instructor.id} className="mb-4">
-                <div className="text-darkViolet font-bold underline">
+                <div className="text-darkViolet font-bold underline text-xl">
                   {instructor.title}
                 </div>
                 <div className="mb-2">{instructor.job_title}</div>
@@ -107,14 +109,14 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                 <div>
                   <div
                     id={`instructorInfo${indx}`}
-                    className="h-20 overflow-hidden"
+                    className="h-20 overflow-hidden mb-2"
                   >
                     {instructor.description}
                   </div>
                 </div>
                 <button
                   id={`showMoreBtnInstructorInfo${indx}`}
-                  className="text-darkViolet font-bold text-lg"
+                  className="text-darkViolet font-bold text-lg flex items-center gap-x-2"
                   onClick={() =>
                     showMore(
                       `instructorInfo${indx}`,
@@ -124,10 +126,15 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                   }
                 >
                   Show more
+                  <img
+                    src={downarrowIcon}
+                    alt="arrow downhead"
+                    className="w-3 h-3"
+                  />
                 </button>
                 <button
                   id={`showLessBtnInstructorInfo${indx}`}
-                  className="hidden text-darkViolet font-bold text-lg"
+                  className="hidden text-darkViolet font-bold text-lg flex items-center gap-x-2"
                   onClick={() =>
                     showLess(
                       `instructorInfo${indx}`,
@@ -136,7 +143,12 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                     )
                   }
                 >
-                  Show less
+                  Show less{" "}
+                  <img
+                    src={uparrowIcon}
+                    alt="arrow downhead"
+                    className="w-3 h-3"
+                  />
                 </button>
               </div>
             );
