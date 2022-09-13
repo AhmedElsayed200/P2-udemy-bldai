@@ -34,7 +34,6 @@ module.exports = {
     },
     listStyleType: {
       disc: 'disc',
-      tick: 'tick',
     }
   },
   plugins: [],

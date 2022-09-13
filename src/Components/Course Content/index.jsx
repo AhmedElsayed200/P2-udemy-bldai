@@ -50,9 +50,9 @@ const CourseContent = ({ selectedCourseCurriculum }) => {
   return (
     <div
       id="courseContentContainer"
-      className="px-0 mt-8 max-w-3xl w-11/12 sm:w-4/5 lg:ml-20 xs:mx-auto lg:w-2/4"
+      className="px-0 my-8 max-w-3xl w-11/12 sm:w-4/5 lg:ml-20 xs:mx-auto lg:w-2/4"
     >
-      <div className="font-ubuntu font-bold text-3xl mb-4">Course content</div>
+      <div className="font-bold text-3xl mb-4">Course content</div>
       <div className="flex md:flex-row xs:flex-col gap-y-4 md:justify-between mb-3">
         <div className="w-fit text-lg">
           {`${data?.sections?.length} sections • ${
@@ -91,7 +91,7 @@ const CourseContent = ({ selectedCourseCurriculum }) => {
               </div>
               <div
                 id={`section${indx}`}
-                className="section hidden border-x-2 border-lightGray"
+                className="section hidden border-b-2 border-x-2 border-lightGray"
               >
                 {section.items?.map((lecture) => {
                   return (
