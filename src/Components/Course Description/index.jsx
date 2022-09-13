@@ -12,8 +12,13 @@ const CourseDescription = ({
     );
     const showMoreBtn = document.getElementById("showMoreBtn");
     const showLessBtn = document.getElementById("showLessBtn");
-    if (courseDescription.classList.contains("h-80"))
+    if (
+      courseDescription.classList.contains("h-80") &&
+      courseDescription.classList.contains("overflow-hidden")
+    ) {
       courseDescription.classList.remove("h-80");
+      courseDescription.classList.remove("overflow-hidden");
+    }
     showMoreBtn.classList.toggle("hidden");
     showLessBtn.classList.toggle("hidden");
   };
@@ -25,8 +30,13 @@ const CourseDescription = ({
     );
     const showMoreBtn = document.getElementById("showMoreBtn");
     const showLessBtn = document.getElementById("showLessBtn");
-    if (!courseDescription.classList.contains("h-80"))
+    if (
+      !courseDescription.classList.contains("h-80") &&
+      !courseDescription.classList.contains("overflow-hidden")
+    ) {
       courseDescription.classList.add("h-80");
+      courseDescription.classList.add("overflow-hidden");
+    }
     showMoreBtn.classList.toggle("hidden");
     showLessBtn.classList.toggle("hidden");
   };
@@ -36,22 +46,22 @@ const CourseDescription = ({
       id="courseDescriptionContainer"
       className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-20 xs:mx-auto mb-4"
     >
-      <div id="courseDescriptionContent" className="h-80 truncate">
+      <div id="courseDescriptionContent" className="h-80 overflow-hidden">
         <div id="courseDescriptionTxt" className="mb-4">
           <div id="courseDescriptionTitle" className="font-bold text-3xl mb-3">
             Description
           </div>
-          <pre className="overflow-x-auto leading-2">
+          <div className="overflow-x-auto leading-2">
             {selectedCourseDescription}
-          </pre>
+          </div>
         </div>
         <div id="forWho">
           <div id="forWhoTitle" className="font-bold text-3xl mb-3">
             Who this course is for:
           </div>
-          <pre id="forWhoTxt" className="leading-7 overflow-x-auto">
+          <div id="forWhoTxt" className="leading-7 overflow-x-auto">
             {selectedCourseForWho}
-          </pre>
+          </div>
         </div>
       </div>
       <button
