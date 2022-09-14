@@ -17,7 +17,8 @@ module.exports = {
       yellow: "#faaf00",
       lightViolet: "#cec0fc",
       midViolet: "#a435f0",
-      darkViolet: "#8710d8"
+      darkViolet: "#8710d8",
+      transparent: "#ffffff14",
     },
     fontFamily: {
       lora: ["Lora", "serif"],
@@ -34,7 +35,12 @@ module.exports = {
     },
     listStyleType: {
       disc: 'disc',
+    },
+    gridTemplateColumns: {
+      // added new 4 column grid as new4
+      'new2': '60% auto'
     }
+
   },
   plugins: [],
 }
