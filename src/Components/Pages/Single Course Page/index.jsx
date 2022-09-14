@@ -7,6 +7,7 @@ import CourseRequirements from "../../Widgets/Course Requirements";
 import CourseDescription from "../../Widgets/Course Description";
 import CourseInstructors from "../../Widgets/Course Instructors";
 import SideBar from "../../Widgets/Side Bar";
+import StudentsFeedback from "../../Widgets/Students Feedback";
 
 const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
   const [selectedCourseSummary, setSelectedCourseSummary] = useState({});
@@ -71,6 +72,7 @@ const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
       <CourseInstructors
         selectedCourseInstructors={selectedCourseSummary?.visible_instructors}
       />
+      <StudentsFeedback selectedCourseReview={selectedCourseReview} />
       <SideBar selectedCourseSummary={selectedCourseSummary} />
     </div>
   );
