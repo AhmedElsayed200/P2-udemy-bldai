@@ -3,7 +3,7 @@ const CourseRequirements = ({ selectedCourseRequirements }) => {
   return (
     <div
       id="courseRequirementsContainer"
-      className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-20 xs:mx-auto lg:w-2/4 mb-4"
+      className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-32 xs:mx-auto lg:w-2/4 mb-4"
     >
       <div id="courseRequirementsContent">
         <div id="courseRequirementsHeader" className="font-bold text-3xl mb-4">

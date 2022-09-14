@@ -37,8 +37,8 @@ module.exports = {
       disc: 'disc',
     },
     gridTemplateColumns: {
-      // added new 4 column grid as new4
-      'new2': '60% auto'
+      'new2': '60% auto',
+      '2': 'repeat(2, minmax(0,1fr))'
     }
 
   },

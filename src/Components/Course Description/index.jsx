@@ -47,7 +47,7 @@ const CourseDescription = ({
   return (
     <div
       id="courseDescriptionContainer"
-      className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-20 xs:mx-auto mb-4"
+      className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-32 xs:mx-auto mb-4"
     >
       <div id="courseDescriptionContent" className="h-80 overflow-hidden">
         <div id="courseDescriptionTxt" className="mb-4">

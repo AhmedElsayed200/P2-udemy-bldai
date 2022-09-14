@@ -6,6 +6,7 @@ import CourseContent from "../../Components/Course Content";
 import CourseRequirements from "../../Components/Course Requirements";
 import CourseDescription from "../../Components/Course Description";
 import CourseInstructors from "../../Components/Course Instructors";
+import SideBar from "../../Components/Side Bar";
 
 const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
   const [selectedCourseSummary, setSelectedCourseSummary] = useState({});
@@ -63,6 +64,7 @@ const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
       <CourseInstructors
         selectedCourseInstructors={selectedCourseSummary?.visible_instructors}
       />
+      <SideBar selectedCourseSummary={selectedCourseSummary} />
     </div>
   );
 };

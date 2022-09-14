@@ -43,7 +43,7 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
   return (
     <div
       id="courseInstructorsContainer"
-      className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-20 xs:mx-auto mb-4"
+      className="w-11/12 max-w-3xl sm:w-4/5 lg:ml-32 xs:mx-auto mb-4"
     >
       <div id="courseInstructorsContent">
         <div className="font-bold text-3xl mb-3">Instructors</div>

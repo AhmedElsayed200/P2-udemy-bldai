@@ -22,7 +22,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
       </div>
       <div
         id="courseHeaderContent"
-        className="max-w-3xl w-11/12 sm:w-4/5 lg:ml-20 xs:mx-auto pt-4 font-ubuntu text-white md:pt-5"
+        className="max-w-3xl w-11/12 sm:w-4/5 lg:ml-32 xs:mx-auto pt-4 font-ubuntu text-white md:pt-5"
       >
         <div
           id="courseTitle"
