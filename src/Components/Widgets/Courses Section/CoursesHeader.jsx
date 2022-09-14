@@ -1,4 +1,4 @@
-import Style from "../../Resources/Styling/Courses.module.css";
+import Style from "../../../Resources/Styling/Courses.module.css";
 
 const CoursesHeader = ({ coursesNavbar, selectedCourse, selectCourse }) => {
   const handleCourseSelect = (course) => {

@@ -1,3 +1,5 @@
+import clockImg from "../../../Resources/images/clock.jpg";
+
 const HomeHeader = () => {
   return (
     <header className="header">
@@ -10,10 +12,7 @@ const HomeHeader = () => {
       </div>
       <div className="header-img-container">
         <div className="header-img">
-          <img
-            src={require("../../Resources/images/clock.jpg")}
-            alt="time to start"
-          />
+          <img src={clockImg} alt="time to start" />
         </div>
       </div>
     </header>

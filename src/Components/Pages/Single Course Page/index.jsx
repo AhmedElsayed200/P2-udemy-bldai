@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import CourseHeader from "../../Components/Course Header";
-import CourseObjectives from "../../Components/Course Objectives";
-import CourseContent from "../../Components/Course Content";
-import CourseRequirements from "../../Components/Course Requirements";
-import CourseDescription from "../../Components/Course Description";
-import CourseInstructors from "../../Components/Course Instructors";
-import SideBar from "../../Components/Side Bar";
+import CourseHeader from "../../Widgets/Course Header";
+import CourseObjectives from "../../Widgets/Course Objectives";
+import CourseContent from "../../Widgets/Course Content";
+import CourseRequirements from "../../Widgets/Course Requirements";
+import CourseDescription from "../../Widgets/Course Description";
+import CourseInstructors from "../../Widgets/Course Instructors";
+import SideBar from "../../Widgets/Side Bar";
 
 const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
   const [selectedCourseSummary, setSelectedCourseSummary] = useState({});
@@ -26,7 +26,6 @@ const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
     for (const ele of coursesSummary) {
       for (const item of ele.items) {
         if (item.url.includes(courseURL)) {
-          console.log("shsasjaskdjalsdja");
           console.log(item);
           setSelectedCourseSummary(item);
           break;
@@ -43,7 +42,15 @@ const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
         break;
       }
     }
-  });
+  }, [
+    courseURL,
+    coursesData,
+    coursesReview,
+    coursesSummary,
+    selectedCourseContent,
+    selectedCourseReview,
+    selectedCourseSummary,
+  ]);
 
   return (
     <div id="coursePage">

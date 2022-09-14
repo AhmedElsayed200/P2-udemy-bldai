@@ -1,8 +1,8 @@
 import Cards from "./Cards";
 import CoursesHeader from "./CoursesHeader";
-import Style from "../../Resources/Styling/Courses.module.css";
+import Style from "../../../Resources/Styling/Courses.module.css";
 /* array of strings represents courses navbar */
-import { coursesNavbar } from "../../Resources/Courses Data/CoursesData";
+import { coursesNavbar } from "../../../Resources/Courses Data/CoursesData";
 import { useState } from "react";
 
 const CoursesSection = ({ coursesSummary }) => {

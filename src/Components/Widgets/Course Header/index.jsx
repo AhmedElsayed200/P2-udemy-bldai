@@ -1,9 +1,9 @@
 import AddToCart from "./addToCart";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
-import exclamition from "../../Resources/SVGs/exclamation-mark.svg";
-import language from "../../Resources/SVGs/language.svg";
-import caption from "../../Resources/SVGs/captioning.svg";
+import exclamition from "../../../Resources/SVGs/exclamation-mark.svg";
+import language from "../../../Resources/SVGs/language.svg";
+import caption from "../../../Resources/SVGs/captioning.svg";
 
 const CourseHeader = ({ selectedCourseSummary }) => {
   console.log("selectedCourseSummary: ", selectedCourseSummary);

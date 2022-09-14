@@ -1,4 +1,4 @@
-import Style from "../../Resources/Styling/Courses.module.css";
+import Style from "../../../Resources/Styling/Courses.module.css";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 

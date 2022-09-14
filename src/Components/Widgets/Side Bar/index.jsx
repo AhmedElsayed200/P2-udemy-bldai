@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import viedoPlayBtnIcon from "../../Resources/SVGs/play-video-on-screen.svg";
-import fileIcon from "../../Resources/SVGs/file.svg";
-import downloadableFileIcon from "../../Resources/SVGs/product-downloadable.svg";
-import infinityIcon from "../../Resources/SVGs/infinity.svg";
-import phoneIcon from "../../Resources/SVGs/phone.svg";
-import trophyIcon from "../../Resources/SVGs/trophy.svg";
+import viedoPlayBtnIcon from "../../../Resources/SVGs/play-video-on-screen.svg";
+import fileIcon from "../../../Resources/SVGs/file.svg";
+import downloadableFileIcon from "../../../Resources/SVGs/product-downloadable.svg";
+import infinityIcon from "../../../Resources/SVGs/infinity.svg";
+import phoneIcon from "../../../Resources/SVGs/phone.svg";
+import trophyIcon from "../../../Resources/SVGs/trophy.svg";
 
 const SideBar = ({ selectedCourseSummary }) => {
   let discount =

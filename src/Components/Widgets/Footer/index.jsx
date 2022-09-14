@@ -1,9 +1,9 @@
-import nasdaqLogo from "../../Resources/SVGs/NASDAQ_Logo.svg";
-import volkswagenLogo from "../../Resources/SVGs/Volkswagen_logo.svg";
-import boxIncLogo from "../../Resources/SVGs/Box_Inc._logo.svg";
-import netappLogo from "../../Resources/SVGs/NetApp.svg";
-import eventbriteLogo from "../../Resources/SVGs/Eventbrite_Logo.svg";
-import language from "../../Resources/SVGs/language.svg";
+import nasdaqLogo from "../../../Resources/SVGs/NASDAQ_Logo.svg";
+import volkswagenLogo from "../../../Resources/SVGs/Volkswagen_logo.svg";
+import boxIncLogo from "../../../Resources/SVGs/Box_Inc._logo.svg";
+import netappLogo from "../../../Resources/SVGs/NetApp.svg";
+import eventbriteLogo from "../../../Resources/SVGs/Eventbrite_Logo.svg";
+import language from "../../../Resources/SVGs/language.svg";
 
 const Footer = () => {
   return (

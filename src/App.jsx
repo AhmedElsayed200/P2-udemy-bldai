@@ -1,12 +1,12 @@
 import "./App.css";
 import "./Resources/Styling/index.css";
-import Navbar from "./Components/Navbar";
-import HomePage from "./Pages/Home Page";
-import CoursePage from "./Pages/Single Course Page";
+import Navbar from "./Components/Widgets/Navbar";
+import HomePage from "./Components/Pages/Home Page";
+import CoursePage from "./Components/Pages/Single Course Page";
+import Footer from "./Components/Widgets/Footer";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { data, summary, review } from "./Resources/APIs/APIs";
-import Footer from "./Components/Footer";
 
 const App = () => {
   const [coursesSummary, setCoursesSummary] = useState([]);

@@ -1,6 +1,6 @@
-import HomeHeader from "../../Components/Home Header";
-import CoursesSection from "../../Components/Courses Section";
-import TopCategories from "../../Components/Top Categories";
+import HomeHeader from "../../Widgets/Home Header";
+import CoursesSection from "../../Widgets/Courses Section";
+import TopCategories from "../../Widgets/Top Categories";
 
 const HomePage = ({ coursesSummary }) => {
   return (

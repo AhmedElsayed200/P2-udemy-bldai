@@ -1,5 +1,5 @@
-import uparrowIcon from "../../Resources/SVGs/up-arrow.svg";
-import downarrowIcon from "../../Resources/SVGs/down-arrow.svg";
+import uparrowIcon from "../../../Resources/SVGs/up-arrow.svg";
+import downarrowIcon from "../../../Resources/SVGs/down-arrow.svg";
 
 const CourseDescription = ({
   selectedCourseDescription,

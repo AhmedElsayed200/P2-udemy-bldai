@@ -1,9 +1,9 @@
-import starIcon from "../../Resources/SVGs/star.svg";
-import certificationIcon from "../../Resources/SVGs/certificate.svg";
-import peopleIcon from "../../Resources/SVGs/people.svg";
-import playbtnIcon from "../../Resources/SVGs/play-button.svg";
-import downarrowIcon from "../../Resources/SVGs/down-arrow.svg";
-import uparrowIcon from "../../Resources/SVGs/up-arrow.svg";
+import starIcon from "../../../Resources/SVGs/star.svg";
+import certificationIcon from "../../../Resources/SVGs/certificate.svg";
+import peopleIcon from "../../../Resources/SVGs/people.svg";
+import playbtnIcon from "../../../Resources/SVGs/play-button.svg";
+import downarrowIcon from "../../../Resources/SVGs/down-arrow.svg";
+import uparrowIcon from "../../../Resources/SVGs/up-arrow.svg";
 
 const CourseInstructors = ({ selectedCourseInstructors }) => {
   console.log("selectedCourseInstructors: ", selectedCourseInstructors);
