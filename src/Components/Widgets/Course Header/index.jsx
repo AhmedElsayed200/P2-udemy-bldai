@@ -1,6 +1,5 @@
 import AddToCart from "./addToCart";
 import Rating from "@mui/material/Rating";
-import StarIcon from "@mui/icons-material/Star";
 import exclamition from "../../../Resources/SVGs/exclamation-mark.svg";
 import language from "../../../Resources/SVGs/language.svg";
 import caption from "../../../Resources/SVGs/captioning.svg";
@@ -56,9 +55,6 @@ const CourseHeader = ({ selectedCourseSummary }) => {
               name="read-only"
               value={Math.round(selectedCourseSummary?.rating * 10) / 10}
               precision={0.5}
-              emptyIcon={
-                <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-              }
               readOnly
             />
           </span>
