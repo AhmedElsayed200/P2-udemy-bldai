@@ -1,9 +1,9 @@
 import Style from "../../../Resources/Styling/Courses.module.css";
 
 const CoursesHeader = ({ coursesNavbar, selectedCourse, selectCourse }) => {
+  /* course navbar; user can select what course items to be shown */
   const handleCourseSelect = (course) => {
     selectCourse(course);
-    console.log(course);
   };
 
   return (
@@ -13,6 +13,7 @@ const CoursesHeader = ({ coursesNavbar, selectedCourse, selectCourse }) => {
         Choose from 185,000 online video courses with new additions published
         every month
       </div>
+      {/* courses navbar */}
       <ul className={Style.navbar}>
         {coursesNavbar.map((course) => (
           <li key={course}>

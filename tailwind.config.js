@@ -36,9 +36,10 @@ module.exports = {
     listStyleType: {
       disc: 'disc',
     },
-    gridTemplateColumns: {
-      'new2': '60% auto',
-      '2': 'repeat(2, minmax(0,1fr))'
+    extend: {
+      gridTemplateColumns: {
+        'new2': '60% auto',
+      }
     }
 
   },

@@ -14,13 +14,7 @@ const CoursePage = ({ coursesSummary, coursesData, coursesReview }) => {
   const [selectedCourseContent, setSelectedCourseContent] = useState({});
   const [selectedCourseReview, setSelectedCourseReview] = useState({});
 
-  console.log("coursesSummary: ", coursesSummary);
-  console.log("coursesData: ", coursesData);
-  console.log("coursesReview: ", coursesReview);
-
   let { courseURL } = useParams();
-
-  // console.log(courseURL);
 
   useEffect(() => {
     /* set the course summary data based on the path */

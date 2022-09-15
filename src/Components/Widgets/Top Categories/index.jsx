@@ -9,48 +9,40 @@ import musicImg from "../../../Resources/images/music.jpg";
 
 const TopCategories = () => {
   return (
-    <section className="container w-5/6">
-      <p className="top-categories">Top categories</p>
-      <div className="row">
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img src={designImg} className="img-fluid" alt="design" />
-          <p className="py-3 title-category">Design</p>
+    <section className="w-fit mx-auto px-32 mb-14">
+      <p className="text-3xl font-bold mb-3">Top categories</p>
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 xs:grid-cols-1 gap-3">
+        <div>
+          <img src={designImg} alt="design" />
+          <p className="text-lg font-bold mt-2">Design</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img src={developmentImg} className="img-fluid" alt="development" />
-          <p className="py-3 title-category">Development</p>
+        <div>
+          <img src={developmentImg} alt="development" />
+          <p className="text-lg font-bold mt-2">Development</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img src={marketingImg} className="img-fluid" alt="marketing" />
-          <p className="py-3 title-category">Marketing</p>
+        <div>
+          <img src={marketingImg} alt="marketing" />
+          <p className="text-lg font-bold mt-2">Marketing</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img
-            src={itSoftwareImg}
-            className="img-fluid"
-            alt="it and software"
-          />
-          <p className="py-3 title-category">IT and Software</p>
+        <div>
+          <img src={itSoftwareImg} alt="it and software" />
+          <p className="text-lg font-bold mt-2">IT and Software</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img
-            src={presonalDevelopmentImg}
-            className="img-fluid"
-            alt="personal development"
-          />
-          <p className="py-3 title-category">Personal Development</p>
+        <div>
+          <img src={presonalDevelopmentImg} alt="personal development" />
+          <p className="text-lg font-bold mt-2">Personal Development</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img src={businessImg} className="img-fluid" alt="business" />
-          <p className="py-3 title-category">Business</p>
+        <div>
+          <img src={businessImg} alt="business" />
+          <p className="text-lg font-bold mt-2">Business</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img src={photographyImg} className="img-fluid" alt="photography" />
-          <p className="py-3 title-category">Photography</p>
+        <div>
+          <img src={photographyImg} alt="photography" />
+          <p className="text-lg font-bold mt-2">Photography</p>
         </div>
-        <div className="col-12 col-sm-4 col-lg-3">
-          <img src={musicImg} className="img-fluid" alt="music" />
-          <p className="py-3 title-category">Music</p>
+        <div>
+          <img src={musicImg} alt="music" />
+          <p className="text-lg font-bold mt-2">Music</p>
         </div>
       </div>
     </section>

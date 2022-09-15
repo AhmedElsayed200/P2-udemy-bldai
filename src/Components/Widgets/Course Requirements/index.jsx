@@ -1,5 +1,4 @@
 const CourseRequirements = ({ selectedCourseRequirements }) => {
-  console.log("selectedCourseRequirements: ", selectedCourseRequirements);
   return (
     <div
       id="courseRequirementsContainer"

@@ -1,51 +1,13 @@
+/* import functions used in this component */
+import {
+  secondsToHms,
+  expandAllSections,
+  collapseAllSections,
+  toggleSection,
+} from "../../../Resources/Assets/index";
 const CourseContent = ({ selectedCourseCurriculum }) => {
-  console.log("selectedCourseCurriculum: ", selectedCourseCurriculum);
-
   /* get data from the selectedCourseContent */
   const data = selectedCourseCurriculum?.data;
-
-  /* function to convert seconds to hours, minutes, and seconds */
-  const secondsToHms = (d, time) => {
-    d = Number(d);
-    let h = Math.floor(d / 3600);
-    let m = Math.ceil((d % 3600) / 60);
-    // let s = Math.ceil((d % 3600) % 60);
-
-    let hDisplay = h > 0 ? h + time[0] : "";
-    let mDisplay = m > 0 ? m + time[1] : "";
-    // let sDisplay = s > 0 ? s + "sec " : "";
-    return hDisplay + mDisplay;
-  };
-
-  /* function to expand all sections */
-  const expandAllSections = () => {
-    const allSections = document.getElementsByClassName("section");
-    const expandBtn = document.getElementById("expandAllSectionsBtn");
-    const collapseBtn = document.getElementById("collapseAllSectionsBtn");
-    for (let ele of allSections) {
-      if (ele.classList.contains("hidden")) ele.classList.toggle("hidden");
-    }
-    expandBtn.classList.toggle("hidden");
-    collapseBtn.classList.toggle("hidden");
-  };
-
-  /* function to collapse all sections */
-  const collapseAllSections = () => {
-    const allSections = document.getElementsByClassName("section");
-    const expandBtn = document.getElementById("expandAllSectionsBtn");
-    const collapseBtn = document.getElementById("collapseAllSectionsBtn");
-    for (let ele of allSections) {
-      if (!ele.classList.contains("hidden")) ele.classList.add("hidden");
-    }
-    expandBtn.classList.toggle("hidden");
-    collapseBtn.classList.toggle("hidden");
-  };
-
-  /* function to toggle single section */
-  const toggleSection = (id) => {
-    const section = document.getElementById(id);
-    section.classList.toggle("hidden");
-  };
 
   return (
     <div
@@ -53,6 +15,7 @@ const CourseContent = ({ selectedCourseCurriculum }) => {
       className="px-0 my-8 max-w-3xl w-11/12 sm:w-4/5 lg:ml-32 xs:mx-auto lg:w-2/4"
     >
       <div className="font-bold text-3xl mb-4">Course content</div>
+      {/* course content header */}
       <div className="flex md:flex-row xs:flex-col gap-y-4 md:justify-between mb-3">
         <div className="w-fit text-lg">
           {`${data?.sections?.length} sections • ${
@@ -63,6 +26,7 @@ const CourseContent = ({ selectedCourseCurriculum }) => {
           )} total length`}
         </div>
         <div className="text-darkViolet font-bold w-fit">
+          {/* buttons to expand or collaps course content */}
           <button id="expandAllSectionsBtn" onClick={expandAllSections}>
             Expand all sections
           </button>
@@ -75,6 +39,7 @@ const CourseContent = ({ selectedCourseCurriculum }) => {
           </button>
         </div>
       </div>
+      {/* course data sections */}
       <div>
         {data?.sections?.map((section, indx) => {
           return (

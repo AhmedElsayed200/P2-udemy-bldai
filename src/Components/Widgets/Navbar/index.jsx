@@ -8,6 +8,7 @@ import { useState } from "react";
 
 const Navbar = ({ searchForCourse }) => {
   const [searchKey, setSearchKey] = useState("");
+
   const handleChange = (e) => {
     setSearchKey(e.target.value);
   };

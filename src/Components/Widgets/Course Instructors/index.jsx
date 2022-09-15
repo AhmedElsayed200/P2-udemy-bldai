@@ -4,42 +4,13 @@ import peopleIcon from "../../../Resources/SVGs/people.svg";
 import playbtnIcon from "../../../Resources/SVGs/play-button.svg";
 import downarrowIcon from "../../../Resources/SVGs/down-arrow.svg";
 import uparrowIcon from "../../../Resources/SVGs/up-arrow.svg";
+/* import functions used in this component */
+import {
+  showMoreInstruInfo,
+  showLessInstruInfo,
+} from "../../../Resources/Assets/index";
 
 const CourseInstructors = ({ selectedCourseInstructors }) => {
-  console.log("selectedCourseInstructors: ", selectedCourseInstructors);
-
-  /* function to show less about instructor info */
-  const showMore = (instructorInfoId, showMoreBtnId, showLessBtnId) => {
-    const instructorInfo = document.getElementById(instructorInfoId);
-    const showMoreBtn = document.getElementById(showMoreBtnId);
-    const showLessBtn = document.getElementById(showLessBtnId);
-    if (
-      instructorInfo.classList.contains("h-20") &&
-      instructorInfo.classList.contains("overflow-hidden")
-    ) {
-      instructorInfo.classList.remove("h-20");
-      instructorInfo.classList.remove("overflow-hidden");
-    }
-    showMoreBtn.classList.toggle("hidden");
-    showLessBtn.classList.toggle("hidden");
-  };
-
-  /* function to show less about instructor info */
-  const showLess = (instructorInfoId, showMoreBtnId, showLessBtnId) => {
-    const instructorInfo = document.getElementById(instructorInfoId);
-    const showMoreBtn = document.getElementById(showMoreBtnId);
-    const showLessBtn = document.getElementById(showLessBtnId);
-    if (
-      !instructorInfo.classList.contains("h-20") &&
-      !instructorInfo.classList.contains("overflow-hidden")
-    ) {
-      instructorInfo.classList.add("h-20");
-      instructorInfo.classList.add("overflow-hidden");
-    }
-    showMoreBtn.classList.toggle("hidden");
-    showLessBtn.classList.toggle("hidden");
-  };
-
   return (
     <div
       id="courseInstructorsContainer"
@@ -51,11 +22,14 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
           {selectedCourseInstructors?.map((instructor, indx) => {
             return (
               <div key={instructor.id} className="mb-4">
+                {/* instructor name and job title */}
                 <div className="text-darkViolet font-bold underline text-xl">
                   {instructor.title}
                 </div>
                 <div className="mb-2">{instructor.job_title}</div>
+                {/* instructor info summary */}
                 <div className="flex gap-x-2 items-center	mb-2">
+                  {/* instructor picture */}
                   <div>
                     <img
                       className="rounded-full mr-2"
@@ -63,6 +37,7 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                       alt={instructor.title}
                     />
                   </div>
+                  {/* summary info */}
                   <div>
                     <div className="flex gap-x-2 items-center mb-2">
                       <img src={starIcon} alt="star icon" className="w-4 h-4" />
@@ -106,6 +81,7 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                     </div>
                   </div>
                 </div>
+                {/* instrcutor description */}
                 <div>
                   <div
                     id={`instructorInfo${indx}`}
@@ -114,11 +90,12 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                     {instructor.description}
                   </div>
                 </div>
+                {/* show more or less about instructor description */}
                 <button
                   id={`showMoreBtnInstructorInfo${indx}`}
                   className="text-darkViolet font-bold text-lg flex items-center gap-x-2"
                   onClick={() =>
-                    showMore(
+                    showMoreInstruInfo(
                       `instructorInfo${indx}`,
                       `showMoreBtnInstructorInfo${indx}`,
                       `showLessBtnInstructorInfo${indx}`
@@ -136,7 +113,7 @@ const CourseInstructors = ({ selectedCourseInstructors }) => {
                   id={`showLessBtnInstructorInfo${indx}`}
                   className="hidden text-darkViolet font-bold text-lg flex items-center gap-x-2"
                   onClick={() =>
-                    showLess(
+                    showLessInstruInfo(
                       `instructorInfo${indx}`,
                       `showMoreBtnInstructorInfo${indx}`,
                       `showLessBtnInstructorInfo${indx}`

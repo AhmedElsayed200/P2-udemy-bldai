@@ -23,6 +23,30 @@ const StudentsFeedback = ({ selectedCourseReview }) => {
     totalReviewers,
   ]);
 
+  const showMoreReviews = () => {
+    const feedbackContainer = document.getElementById("studentsComments");
+    const showMoreBtn = document.getElementById("showMoreBtnRev");
+    const showLessBtn = document.getElementById("showLessBtnRev");
+    if (feedbackContainer.classList.contains("h-80")) {
+      feedbackContainer.classList.remove("h-80");
+      feedbackContainer.classList.remove("overflow-hidden");
+    }
+    showMoreBtn.classList.toggle("hidden");
+    showLessBtn.classList.toggle("hidden");
+  };
+
+  const showLessReviews = () => {
+    const feedbackContainer = document.getElementById("studentsComments");
+    const showMoreBtn = document.getElementById("showMoreBtnRev");
+    const showLessBtn = document.getElementById("showLessBtnRev");
+    if (!feedbackContainer.classList.contains("h-80")) {
+      feedbackContainer.classList.add("h-80");
+      feedbackContainer.classList.add("overflow-hidden");
+    }
+    showMoreBtn.classList.toggle("hidden");
+    showLessBtn.classList.toggle("hidden");
+  };
+
   const like = (indx) => {
     const likeIcon = document.getElementById(`likeIcon${indx}`);
     const dislikeIcon = document.getElementById(`dislikeIcon${indx}`);
@@ -128,7 +152,7 @@ const StudentsFeedback = ({ selectedCourseReview }) => {
       {/* students reviews */}
       <div id="studentsCommentsContainer">
         <div className="text-3xl font-bold mb-4">Reviews</div>
-        <div id="studentsComments">
+        <div id="studentsComments" className="h-80 overflow-hidden">
           {selectedCourseReview?.results?.map((review, indx) => {
             return (
               <div key={review.id}>
@@ -183,8 +207,19 @@ const StudentsFeedback = ({ selectedCourseReview }) => {
             );
           })}
         </div>
-        <button className="w-full font-bold hover:bg-thinGray border-2 border-black py-2 mt-4">
+        <button
+          id="showMoreBtnRev"
+          onClick={showMoreReviews}
+          className="w-full font-bold hover:bg-thinGray border-2 border-black py-2 mt-4"
+        >
           See more reviews
+        </button>
+        <button
+          id="showLessBtnRev"
+          onClick={showLessReviews}
+          className="hidden w-full font-bold hover:bg-thinGray border-2 border-black py-2 mt-4"
+        >
+          See less reviews
         </button>
       </div>
     </div>

@@ -6,10 +6,9 @@ import language from "../../../Resources/SVGs/language.svg";
 import caption from "../../../Resources/SVGs/captioning.svg";
 
 const CourseHeader = ({ selectedCourseSummary }) => {
-  console.log("selectedCourseSummary: ", selectedCourseSummary);
-
   return (
     <div id="courseHeaderContainer" className="conatiner bg-lightBlack">
+      {/* course image */}
       <div
         id="courseHeaderImg"
         className="max-w-3xl w-screen sm:w-4/5 mx-auto lg:hidden"
@@ -20,6 +19,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
           alt={selectedCourseSummary?.title}
         />
       </div>
+      {/* course header data */}
       <div
         id="courseHeaderContent"
         className="max-w-3xl w-11/12 sm:w-4/5 lg:ml-32 xs:mx-auto pt-4 font-ubuntu text-white md:pt-5"
@@ -43,6 +43,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
             </span>
           );
         })}
+        {/* course rating */}
         <div
           id="courseRatingContainer"
           className="inline-flex gap-x-2 text-xl font-normal mb-2"
@@ -69,6 +70,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
             {selectedCourseSummary?.num_subscribers} students
           </span>
         </div>
+        {/* course instructors */}
         <div id="courseInstructorsHeader" className="mb-2">
           {`Created by `}
           {selectedCourseSummary?.visible_instructors?.map(
@@ -89,6 +91,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
             }
           )}
         </div>
+        {/* course date */}
         <div id="lastUpdated" className="flex gap-x-3 items-center mb-2">
           <img className="w-4 h-4" src={exclamition} alt="exclamation" />
           {`Last updated `}
@@ -96,6 +99,7 @@ const CourseHeader = ({ selectedCourseSummary }) => {
             selectedCourseSummary?.last_update_date?.split("-")[1]
           )}/${Number(selectedCourseSummary?.last_update_date?.split("-")[0])}`}
         </div>
+        {/* course language and captions */}
         <div id="courseLanguage" className="flex gap-x-3 items-center mb-2">
           <img className="w-4 h-4" src={language} alt="language" />
           {selectedCourseSummary?.locale?.title}
