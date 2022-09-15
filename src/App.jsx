@@ -4,7 +4,12 @@ import Navbar from "./Components/Widgets/Navbar";
 import HomePage from "./Components/Pages/Home Page";
 import CoursePage from "./Components/Pages/Single Course Page";
 import Footer from "./Components/Widgets/Footer";
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  createSearchParams,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { data, summary, review } from "./Resources/APIs/APIs";
 
@@ -12,6 +17,7 @@ const App = () => {
   const [coursesSummary, setCoursesSummary] = useState([]);
   const [coursesData, setCoursesData] = useState([]);
   const [coursesReview, setCoursesReview] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     /* fetch courses summary */
@@ -37,9 +43,20 @@ const App = () => {
       });
   }, []);
 
+  const searchForCourse = (params) => {
+    if (params !== "")
+      navigate({
+        pathname: "",
+        search: createSearchParams({
+          keywards: params,
+        }).toString(),
+      });
+    else navigate("/");
+  };
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar searchForCourse={searchForCourse} />
       <Routes>
         <Route
           path="/"

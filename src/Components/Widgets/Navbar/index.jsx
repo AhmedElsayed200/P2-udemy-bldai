@@ -4,8 +4,19 @@ import udemyLogoImg from "../../../Resources/images/udemy_logo.png";
 import searchImg from "../../../Resources/images/search.png";
 import cartImg from "../../../Resources/images/shopping_cart.png";
 import languageImg from "../../../Resources/images/language_icon.png";
+import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ searchForCourse }) => {
+  const [searchKey, setSearchKey] = useState("");
+  const handleChange = (e) => {
+    setSearchKey(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchForCourse(searchKey);
+  };
+
   return (
     <nav id="navbar">
       <div className="menu-3lines">
@@ -18,7 +29,7 @@ const Navbar = () => {
       </Link>
       <div className="categories-navbar">Categories</div>
       <div className="search-navbar-container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <button type="submit" className="search-btn">
             <img src={searchImg} alt="search" />
           </button>
@@ -28,6 +39,8 @@ const Navbar = () => {
             id="searchNavBar"
             className="search-navbar"
             placeholder="Search for anything"
+            value={searchKey}
+            onChange={handleChange}
           />
         </form>
       </div>

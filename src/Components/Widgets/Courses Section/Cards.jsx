@@ -1,11 +1,35 @@
+import { useSearchParams } from "react-router-dom";
 import Style from "../../../Resources/Styling/Courses.module.css";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Cards = ({ items }) => {
+  const [searchParams] = useSearchParams();
+  console.log(searchParams.get("keywards"));
+
+  const [searchTerm] = useState(["headline", "title"]);
+
+  /* function to search for any course. 
+  if your search keywords match any of the headline 
+  and title section, the course would appear */
+  const search = (items) => {
+    return items.filter((item) => {
+      return searchTerm.some((newItem) => {
+        let keyWord = searchParams.get("keywards") || "";
+        return (
+          item[newItem]
+            .toString()
+            .toLowerCase()
+            .indexOf(keyWord.toLowerCase()) > -1
+        );
+      });
+    });
+  };
+
   return (
     <div className={Style.cardsContainer}>
-      {items.map((courseInfo) => {
+      {search(items).map((courseInfo) => {
         return (
           <Link
             className="no-underline black hover:text-black visited:text-black"
