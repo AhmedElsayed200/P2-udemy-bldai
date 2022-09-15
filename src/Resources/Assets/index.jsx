@@ -127,3 +127,42 @@ export const search = (items, searchParams, searchTerm) => {
     });
   });
 };
+
+/* function to handle UI while scrolling */
+export const handleScroll = () => {
+  const position = window.pageYOffset;
+  const sideBar = document.getElementById("sideBarContainer");
+  const sideBarImg = document.getElementById("sideBarImg");
+  const courseHeadStick = document.getElementById("courseHeadStick");
+  const navCourseContainer = document.getElementById("navCourseContainer");
+  if (position > 0 && position < 75) {
+    if (!courseHeadStick.classList.contains("hidden"))
+      courseHeadStick.classList.add("hidden");
+    if (sideBarImg.classList.contains("hidden"))
+      sideBarImg.classList.remove("hidden");
+  } else if (position >= 75 && position < 370) {
+    if (sideBarImg.classList.contains("hidden"))
+      sideBarImg.classList.remove("hidden");
+    if (courseHeadStick.classList.contains("hidden"))
+      courseHeadStick.classList.remove("hidden");
+    if (sideBar.classList.contains("fixed")) {
+      sideBar.classList.remove("fixed");
+      sideBar.classList.add("absolute");
+      sideBar.classList.remove("top-5");
+      sideBar.classList.add("top-28");
+      sideBar.classList.remove("z-10");
+      navCourseContainer.classList.remove("fixed");
+    }
+  } else if (position >= 370) {
+    if (!sideBarImg.classList.contains("hidden"))
+      sideBarImg.classList.add("hidden");
+    if (sideBar.classList.contains("absolute")) {
+      sideBar.classList.remove("absolute");
+      sideBar.classList.add("fixed");
+      sideBar.classList.add("top-5");
+      sideBar.classList.remove("top-28");
+      sideBar.classList.add("z-10");
+      navCourseContainer.classList.add("fixed");
+    }
+  }
+};

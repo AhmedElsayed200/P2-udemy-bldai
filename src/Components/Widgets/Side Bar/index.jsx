@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { handleScroll } from "../../../Resources/Assets";
 import viedoPlayBtnIcon from "../../../Resources/SVGs/play-video-on-screen.svg";
 import fileIcon from "../../../Resources/SVGs/file.svg";
 import downloadableFileIcon from "../../../Resources/SVGs/product-downloadable.svg";
@@ -13,22 +14,18 @@ const SideBar = ({ selectedCourseSummary }) => {
       selectedCourseSummary?.price?.list_price?.amount) *
       100;
 
-  // useEffect(() => {
-  //   const sideBar = document.getElementById("sideBarContainer");
-  //   const sideBarImg = document.getElementById("sideBarImg");
-  //   const navBar = document.getElementById("navbar");
-  //   const interval = setInterval(() => {
-  //     console.log("hi: ", navBar.scrollTop);
-  //   }, 1000);
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div
       id="sideBarContainer"
-      className="xs:hidden lg:block bg-white w-96 shadow absolute top-28 right-40"
+      className="xs:hidden lg:block bg-white w-96 shadow absolute top-28 lg:right-28"
     >
       {/* course image */}
       <img
